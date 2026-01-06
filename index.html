@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>🐥 Anak Ayam Game</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: "Comic Sans MS", system-ui, sans-serif;
+    background: #fff7dc;
+    text-align: center;
+    color: #4a3b2c;
+  }
+
+  h1 {
+    margin-top: 16px;
+    font-size: 2rem;
+  }
+
+  .score {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .chicken {
+    font-size: 130px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.1s;
+  }
+
+  .chicken:active {
+    transform: scale(0.9);
+  }
+
+  .message-box {
+    margin: 20px;
+    padding: 16px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .footer {
+    margin: 20px 0 40px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>🐥 Anak Ayam Lucu 🐥</h1>
+
+<div class="score">
+  Score: <span id="score">0</span> |
+  High Score: <span id="highScore">0</span>
+</div>
+
+<div class="chicken" id="chicken">🐥</div>
+
+<div class="message-box">
+<strong>Untuk Dimass 🤍</strong><br><br>
+
+dimass, aku terharu bangett u're working so hard of all..  
+rasanya jadi kamu pasti capek yaa, capek fisik, capek pikiran jugaa,  
+tapi tau ndak satu hal menurutku yang bikin kamu selalu bisa ngejalanin semuanya?
+
+karena kamu selalu punya komitmen kuat, kamu punya prinsip,  
+kamu selalu melihat kedepan ketujuan kamu di masa depan,  
+dan aku selalu percaya ituu.
+
+padahal kann bisa aja kamu lebih milih buat berhenti dan malah main  
+kayak temen" lainnya, nikmatin waktu longgar mereka,  
+tapi kamu malah ngerelain itu semua,  
+kamu lebih memilih untuk mengusahakan cita".
+
+aku bangga bangett sama kamuu,  
+rasanya semua orang juga harus tau deh  
+kalau aku bangga banget sama cowokku yang sekeren inii.
+
+dimass, kita usaha bareng yaa,  
+kita berproses bareng,  
+kita bertumbuh bareng,  
+sampai nanti jadi the best version of us,  
+sesuai yang kita impikan masing".
+
+semoga nanti kalau kamu sudah bisa capai impian kamu,  
+aku tetap jadi tujuan akhir kamu atas semuanya..
+
+kalau sewaktu" capek, atau suntuk,  
+rehat sebentar yaa ndak apaa,  
+ada aku disinii,  
+kamu bisa ceritain semua keluh kesah kamu dim..
+
+1000 terima kasih buat dimasku tersayang ini  
+karena selalu kuat dalam hal apapun! 🤍🐥
+</div>
+
+<div class="footer">
+Klik anak ayam untuk main 🐣
+</div>
+
+<script>
+  let score = 0;
+  let highScore = localStorage.getItem("highScore") || 0;
+
+  const scoreEl = document.getElementById("score");
+  const highScoreEl = document.getElementById("highScore");
+  const chicken = document.getElementById("chicken");
+
+  highScoreEl.textContent = highScore;
+
+  chicken.addEventListener("click", () => {
+    score++;
+    scoreEl.textContent = score;
+
+    if (score > highScore) {
+      highScore = score;
+      localStorage.setItem("highScore", highScore);
+      highScoreEl.textContent = highScore;
+    }
+  });
+</script>
+
+</body>
+</html>
